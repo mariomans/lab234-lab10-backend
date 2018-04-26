@@ -3,9 +3,9 @@ package camt.se234.lab10.graphql;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class MutationGrade implements GraphQLMutationResolver {
-//    public String addGrade(){
-//        return null;
-//    }
+    public String addGrade(){
+        return null;
+    }
 }
