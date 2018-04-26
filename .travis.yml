@@ -1,5 +1,4 @@
 language: java
-sudo: required
 before_install:
 - sudo rm /usr/local/bin/docker-compose
 - curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname
@@ -8,7 +7,7 @@ before_install:
 - sudo mv docker-compose /usr/local/bin
 - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 install:
-- mvn install -Dmaven.javadoc.skip=true -B -V
+- travis_wait mvn install -Dmaven.javadoc.skip=true -B -V
 - ls -l
 - docker build --build-arg JAR_FILE=/target/mariomans.jar -t mariomans/se234-lab10-backend  .
 - docker push mariomans/se234-lab10-backend
