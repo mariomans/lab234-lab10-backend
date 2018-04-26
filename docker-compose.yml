@@ -1,10 +1,10 @@
 version: '3.3'
 service:
  backend:
-  image:mariomans/se234-lab10-backend:latest
+  image: mariomans/se234-lab10-backend:latest
   ports:
    - "8082:8080"
-  frontend:
-   image:mariomans/se234-lab10-client:latest
-   ports:
-    - "8081:80"
+ frontend:
+  image: mariomans/se234-lab10-client:latest
+  ports:
+   - "8081:80"

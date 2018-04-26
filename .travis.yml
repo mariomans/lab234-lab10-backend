@@ -9,8 +9,7 @@ before_install:
 install:
 - mvn install -Dmaven.javadoc.skip=true -B -V
 - ls -l
-- docker build --build-arg JAR_FILE=/target/mariomans.jar -t mariomans/se234-lab10-backend
-  .
+- docker build --build-arg JAR_FILE=/target/mariomans.jar -t mariomans/se234-lab10-backend  .
 - docker push mariomans/se234-lab10-backend
 - docker pull mariomans/se234-lab10-client
 script:
