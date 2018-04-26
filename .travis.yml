@@ -12,8 +12,11 @@ install:
 - docker build --build-arg JAR_FILE=/target/mariomans.jar -t mariomans/se234-lab10-backend  .
 - docker push mariomans/se234-lab10-backend
 - docker pull mariomans/se234-lab10-client
+jdk:
+- oraclejdk8
 script:
 - docker-compose -H "$DOCKER_HOST" up -d
+- mvn test
 cache:
   directories:
   - "$HOME/.m2"
