@@ -1,6 +1,6 @@
 package camt.se234.lab10.service;
 
-import camt.se234.lab10.entity.Grade;
+
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import junitparams.naming.TestCaseName;
@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.is;
 public class GradeServiceImplTest {
     @Test
     @Parameters(method = "paramsForTestGetGradeParams")
-    @TestCaseName("Test getGrade Params [{index}] : input is {0}", expect \"{1}\"")
+    @TestCaseName("Test getGrade Params [{index}] : input is {0}, expect \"{1}\"")
     public void testGetGradeparams(double score,String expectedGrade){
         GradeServiceImpl gradeService = new GradeServiceImpl();
         assertThat(gradeService.getGrade(score), is(expectedGrade));
